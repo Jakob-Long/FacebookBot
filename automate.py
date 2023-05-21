@@ -48,13 +48,14 @@ while True:
 
     # If we can't find the comment button, just move to the
     # next post. If we do find it, click it
-    time.sleep(2)
-    if location == 'none': 
+    
+    if location == None: 
+        print(location)
         print('Comment button not found')
-        pyautogui.press('j')
     else: 
         # Click comment button
         print('Clicking comment button')
+        print(location)
         pyautogui.click(location)
 
         # Write the comment
@@ -73,9 +74,8 @@ while True:
         # Exit the comment section to start again
         time.sleep(2)
         print('Exiting comment section')
-        pyautogui.move(1864, 623)
+        pyautogui.moveTo(1074, 771)
         pyautogui.click()
-        pyautogui.move(1279, None)
 
         # Increase comment count by 1
         commentCount += 1
